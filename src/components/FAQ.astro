@@ -1,0 +1,133 @@
+---
+export const faqList = [
+  {
+    question: "How does rooftop solar work?",
+    answer: "Rooftop solar photovoltaic (PV) systems convert sunlight directly into electricity. Solar panels installed on your roof contain silicon semiconductor cells that absorb photons from sunlight. This excites electrons, generating direct current (DC) electricity. The DC power is conducted through safety cables to a solar inverter, which converts DC into alternating current (AC) electricity matching your grid frequency (50 Hz) and voltage. This AC power feeds into your property's electrical distribution board to power lights, appliances, and machinery. Any excess energy produced beyond your immediate consumption can be exported back to the utility grid through a bi-directional Net Meter."
+  },
+  {
+    question: "How many solar panels do I need?",
+    answer: "The number of solar panels required depends on your target system capacity (kW) and individual panel wattage. For example, a standard 5 kW residential solar system using modern 540W to 580W high-efficiency mono-PERC or TopCon panels requires approximately 9 to 10 panel modules. The exact panel count is determined by your total daily electricity consumption in kilowatt-hours (kWh), unshaded rooftop surface area, panel orientation, and local sunlight irradiance levels."
+  },
+  {
+    question: "How is solar system size determined?",
+    answer: "Solar system sizing is determined through a rigorous engineering evaluation of multiple factors: 1) Historical monthly electricity usage (kWh) across summer and winter cycles; 2) Daytime electrical load profile (hours when energy is consumed); 3) Usable shadow-free rooftop square footage; 4) Orientation and tilt angle; 5) Electrical grid service phase (single-phase vs three-phase) and sanctioned connected load limits. VAC Solar never bases system size solely on a single electricity bill amount."
+  },
+  {
+    question: "Will solar work on cloudy days?",
+    answer: "Yes, solar panels continue to generate electricity on cloudy or overcast days, though at reduced output levels. Solar panels absorb diffuse sunlight in addition to direct irradiance. Depending on cloud density and atmospheric overcast, generation output generally ranges between 10% to 50% of peak rated capacity. Solar systems do not shut down completely during cloud cover."
+  },
+  {
+    question: "What happens at night?",
+    answer: "Solar photovoltaic panels require light photons to generate electricity and therefore do not produce power at night. For grid-tied rooftop solar systems, your property seamlessly draws electricity from the main utility grid during night hours. If your grid connection uses Net Metering, energy units exported to the grid during peak daytime generation offset the units consumed from the grid at night."
+  },
+  {
+    question: "How much roof space is required?",
+    answer: "As a general engineering rule of thumb, high-efficiency crystalline solar modules require approximately 80 to 100 square feet of shadow-free usable roof space per 1 kW of installed capacity. Therefore, a standard 3 kW residential system requires roughly 250 to 300 sq.ft, while a 10 kW commercial array requires approximately 800 to 1,000 sq.ft. Additional spacing is factored in for inter-row walkway access, panel tilt separation, and parapet shadow buffers."
+  },
+  {
+    question: "Does roof orientation matter?",
+    answer: "Yes, roof orientation significantly impacts annual solar generation. In the Northern Hemisphere (including India), south-facing roofs receive the highest intensity of sunlight throughout the day. East and West facing roofs receive morning and afternoon sun respectively, generating approximately 10% to 15% less annual yield compared to South. North-facing roofs receive minimal direct sun and are generally avoided unless elevated tilt structures are installed."
+  },
+  {
+    question: "Why is shading important?",
+    answer: "Shading from trees, parapet walls, water tanks, staircase headrooms, or adjacent structures reduces solar panel generation. In a series-connected string of panels, shading on even a portion of a single panel can restrict current flow across the entire string. Modern modules include bypass diodes to isolate shaded cell strings, but proper site shade plotting during engineering design is essential to ensure shade-free solar windows between 9:00 AM and 4:00 PM."
+  },
+  {
+    question: "What does the inverter do?",
+    answer: "The solar inverter is the electronic brain of a PV system. Its core functions include: 1) Converting Direct Current (DC) electricity from solar panels into clean Alternating Current (AC) power; 2) Maximum Power Point Tracking (MPPT) to dynamically optimize power extraction under changing sunlight; 3) Synchronizing output frequency and phase with the utility grid; 4) Providing safety islanding protection by disconnecting system output during grid power failures to protect maintenance workers; 5) Transmitting generation telemetry to digital monitoring portals."
+  },
+  {
+    question: "What maintenance does a solar system require?",
+    answer: "Solar PV systems are solid-state with no moving parts, making maintenance straightforward. Primary maintenance involves periodic cleaning of glass panel surfaces with clean water (every 2 to 4 weeks depending on dust accumulation) to remove dust, soot, and bird droppings. Annual electrical inspections should verify cable terminal torque, DC/AC switchgear operation, inverter heat-sink ventilation, and earth pit resistance."
+  },
+  {
+    question: "What happens during a power outage?",
+    answer: "Standard grid-tied solar inverters automatically shut down within milliseconds during a grid power outage. This mandatory safety feature, known as anti-islanding, prevents the solar system from back-feeding high voltage electricity onto dead utility lines where electrical technicians may be conducting repairs. If backup power during outages is required, a hybrid solar system equipped with energy storage batteries or microgrid isolation switchgear must be installed."
+  },
+  {
+    question: "Can solar be installed on a commercial building?",
+    answer: "Yes. Commercial buildings such as office complexes, retail outlets, schools, warehouses, and factories are prime candidates for rooftop solar. Commercial facilities operating daytime shifts align their peak electrical load with maximum solar generation hours, maximizing self-consumption of clean energy. System sizing is tailored to facility demand, transformer capacity, structural shed/roof ratings, and utility grid regulations."
+  },
+  {
+    question: "Why is a site survey required?",
+    answer: "A physical site survey is required to evaluate parameters that cannot be measured remotely. Our engineers assess roof structural integrity, slab load limits, precise shade boundaries, water drainage paths, service panel breaker space, cable routing pathways, and earth pit locations. This ensures the final engineering layout is safe, structurally sound, and complaint with local electrical codes."
+  },
+  {
+    question: "How long does installation take?",
+    answer: "Physical rooftop installation time varies by system size. Standard residential systems (3 kW to 10 kW) typically take 2 to 4 days for structural mounting, panel placement, inverter installation, and DC/AC wiring. Commercial arrays (20 kW to 100 kW+) usually require 1 to 3 weeks. Additional time is required for pre-installation engineering drawings, utility approvals, and bi-directional net-metering commissioning."
+  },
+  {
+    question: "How can I monitor solar generation?",
+    answer: "VAC Solar installations include cloud-connected smart monitoring hardware inside the inverter. Through a web browser or mobile app, you can view real-time energy production (kW), daily cumulative generation (kWh), historical yield charts, performance ratio metrics, and instant diagnostic fault alerts."
+  },
+  {
+    question: "What information should I provide for a solar consultation?",
+    answer: "To receive an accurate initial solar evaluation, provide: 1) Recent monthly electricity bills (showing kWh consumption and tariff slab); 2) Property location city; 3) Property type (house, villa, commercial office, factory shed); 4) Approx available roof space; 5) Single-phase or Three-phase grid connection; 6) Installation timeline goals."
+  },
+  {
+    question: "How are solar savings estimated?",
+    answer: "Solar savings are estimated by calculating the total annual kilowatt-hours (kWh) a properly oriented system will generate, multiplied by your effective utility tariff slab per kWh. For self-consumed solar power, savings equal grid electricity purchases avoided. For exported energy, savings follow local DISCOM Net Metering credit rates. Weather variations, seasonal shading, and tariff adjustments are factored into financial models."
+  },
+  {
+    question: "Can I install solar if my roof has limited space?",
+    answer: "Yes. If roof space is constrained, options include: 1) Installing higher-wattage, top-tier efficiency modules (e.g. 580W+ TopCon panels) to maximize yield per square foot; 2) Utilizing elevated superstructures over staircase headrooms or water tanks; 3) Customizing string sizing to fit available unshaded roof pockets."
+  }
+];
+
+export interface Props {
+  limit?: number;
+}
+
+const { limit } = Astro.props;
+const displayFaqs = limit ? faqList.slice(0, limit) : faqList;
+---
+
+<section id="faq" class="py-20 bg-white border-b border-slate-200/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-solar-100 border border-solar-200 text-solar-900 text-xs font-bold uppercase tracking-wider mb-4">
+        Structured AI & Technical Knowledge
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 tracking-tight">
+        Frequently Asked Solar Questions
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 mt-4 leading-relaxed">
+        Comprehensive factual answers covering solar engineering, system sizing, site feasibility, components, and maintenance.
+      </p>
+    </div>
+
+    <!-- FAQ Accordion / Cards List -->
+    <div class="max-w-4xl mx-auto space-y-4">
+      {displayFaqs.map((faq, index) => (
+        <details class="group rounded-2xl bg-slate-50 border border-slate-200 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-200">
+          <summary class="flex items-center justify-between cursor-pointer focus:outline-none focus:ring-2 focus:ring-solar-500 rounded-lg p-1">
+            <span class="text-base sm:text-lg font-bold font-heading text-slate-900 pr-4 group-open:text-solar-700">
+              <span class="font-mono text-xs text-solar-600 font-normal mr-2">Q{index + 1}.</span> {faq.question}
+            </span>
+            <div class="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-700 shrink-0 group-open:rotate-180 transition-transform">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-slate-200/80 text-sm text-slate-700 leading-relaxed space-y-2">
+            <p>{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+
+    {limit && (
+      <div class="mt-12 text-center">
+        <a
+          href="/faq"
+          class="inline-flex items-center justify-center px-6 py-3 rounded-xl font-bold text-slate-900 bg-slate-100 hover:bg-solar-400 hover:text-slate-950 transition-colors"
+        >
+          View All 18 Technical FAQs →
+        </a>
+      </div>
+    )}
+
+  </div>
+</section>

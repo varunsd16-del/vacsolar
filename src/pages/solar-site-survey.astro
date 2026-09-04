@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteSurvey from '../components/SiteSurvey.astro';
+import SolarLeadForm from '../components/SolarLeadForm.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<BaseLayout
+  title="Technical Solar Site Survey & Feasibility Assessment | VAC Solar"
+  description="Learn why a physical technical site survey is essential before installing rooftop solar. Comprehensive 8-parameter evaluation covering structural capacity, shade plotting, and electrical DB audits."
+>
+  <!-- Page Header Banner -->
+  <section class="bg-slate-900 text-white py-16 lg:py-20 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-4">
+        <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-solar-400 text-xs font-mono font-bold uppercase tracking-wider">
+          Engineering Feasibility
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
+          Engineering Site Survey & Assessment
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Physical site engineering inspections eliminate hidden structural risks, shading obstacles, and electrical mismatch issues before installation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Component Insertion -->
+  <SiteSurvey />
+
+  <!-- Form Section -->
+  <section id="lead-form" class="py-20 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl sm:text-3xl font-bold font-heading text-slate-900">
+          Book Your Professional Site Assessment
+        </h2>
+        <p class="text-sm text-slate-600 mt-2">
+          Schedule an engineer visit to evaluate your rooftop, electrical DB, and solar generation feasibility.
+        </p>
+      </div>
+      <SolarLeadForm variant="standalone" />
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

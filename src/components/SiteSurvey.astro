@@ -1,0 +1,116 @@
+---
+const surveyCheckpoints = [
+  { step: '01', name: 'Roof Assessment & Capacity', text: 'Inspecting slab structural strength, deadweight load capacity, and water runoff slope.' },
+  { step: '02', name: 'Shadow-Free Area Plotting', text: 'Measuring net usable square footage free of parapets, water tanks, trees, or elevated structures.' },
+  { step: '03', name: 'Sun Path & Shade Analysis', text: 'Mapping sun trajectories across summer and winter solstices to prevent generation drop.' },
+  { step: '04', name: 'Roof Condition & Waterproofing', text: 'Evaluating surface integrity to ensure mounting penetration or ballasting causes zero leakages.' },
+  { step: '05', name: 'Orientation & Module Layout', text: 'Determining optimal panel tilt and row-to-row spacing to prevent self-shading.' },
+  { step: '06', name: 'Electrical Grid Inspection', text: 'Checking existing LT/HT breaker panels, earthing resistance, and service cable gauge.' },
+  { step: '07', name: 'Cable Route & Inverter Location', text: 'Planning shortest low-loss DC and AC cable runs and selecting shaded, ventilated inverter mounting.' },
+  { step: '08', name: 'DISCOM Net Metering Feasibility', text: 'Verifying local distribution transformer capacity and utility approval prerequisites.' }
+];
+---
+
+<section id="site-survey" class="py-20 bg-white border-b border-slate-200/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-energy-light border border-energy-green/20 text-energy-green text-xs font-bold uppercase tracking-wider mb-4">
+        Prerequisite To Any System Design
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-navy-800 tracking-tight">
+        Why a Technical Site Survey Matters
+      </h2>
+      <p class="text-base sm:text-lg text-surface-textSecondary mt-4 leading-relaxed">
+        A desktop quote can never replace physical site inspection. Engineering site surveys eliminate structural, shading, and electrical surprises before installation.
+      </p>
+    </div>
+
+    <!-- Feature Banner with Indian Site Survey Engineer Image -->
+    <div class="mb-16 rounded-2xl bg-surface-bg border border-surface-border overflow-hidden grid grid-cols-1 lg:grid-cols-12 items-center shadow-card-soft">
+      <div class="lg:col-span-6 h-64 sm:h-80 lg:h-full relative overflow-hidden">
+        <img
+          src="/images/indian_site_survey_engineer.png"
+          alt="Indian Solar Engineer conducting technical rooftop assessment"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="lg:col-span-6 p-8 lg:p-10 space-y-4">
+        <span class="px-3 py-1 rounded bg-energy-light text-energy-green text-xs font-mono font-bold uppercase tracking-wider">
+          On-Site Qualification
+        </span>
+        <h3 class="text-2xl sm:text-3xl font-bold font-heading text-navy-800">
+          Professional Site Assessment by Certified Engineers
+        </h3>
+        <p class="text-sm text-surface-textSecondary leading-relaxed">
+          Our engineers conduct detailed rooftop physical audits across Tamil Nadu, measuring shade angles, parapet clearances, and main distribution board capacities.
+        </p>
+        <div class="pt-2 flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-md bg-white border border-slate-200 text-xs font-medium text-navy-700">✓ Laser Roof Plotting</span>
+          <span class="px-3 py-1 rounded-md bg-white border border-slate-200 text-xs font-medium text-navy-700">✓ Electrical Panel Audit</span>
+          <span class="px-3 py-1 rounded-md bg-white border border-slate-200 text-xs font-medium text-navy-700">✓ Wind Load Verification</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 Technical Checkpoints Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      {surveyCheckpoints.map((item) => (
+        <div class="p-6 rounded-2xl bg-surface-bg border border-surface-border hover:border-energy-green transition-colors">
+          <div class="w-9 h-9 rounded-lg bg-navy text-solar-gold font-mono font-bold text-xs flex items-center justify-center mb-4">
+            {item.step}
+          </div>
+          <h3 class="text-lg font-bold font-heading text-navy-800 mb-2">
+            {item.name}
+          </h3>
+          <p class="text-xs text-surface-textSecondary leading-relaxed">
+            {item.text}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Survey Process Timeline -->
+    <div class="rounded-2xl bg-navy text-white p-8 sm:p-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+        <div>
+          <span class="text-xs font-mono font-bold text-solar-gold uppercase tracking-wider">Site Survey Execution</span>
+          <h3 class="text-2xl font-bold font-heading text-white mt-1">What Happens During a Site Visit?</h3>
+        </div>
+        <a
+          href="/#lead-form"
+          class="shrink-0 px-6 py-3 rounded-full font-bold text-navy bg-solar-gold hover:bg-solar-hover transition-colors"
+        >
+          Book a Site Survey
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center md:text-left relative">
+        <div class="p-4 rounded-xl bg-navy-600 border border-slate-700">
+          <div class="text-xs font-mono text-solar-gold mb-1">STAGE A</div>
+          <div class="text-sm font-bold text-white mb-1">Rooftop Laser Survey</div>
+          <div class="text-xs text-slate-300">3D laser measurement of usable space, parapet heights, and obstacle distances.</div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-navy-600 border border-slate-700">
+          <div class="text-xs font-mono text-solar-gold mb-1">STAGE B</div>
+          <div class="text-sm font-bold text-white mb-1">Electrical Panel Audit</div>
+          <div class="text-xs text-slate-300">Inspecting busbars, earth pit resistance, and breaker space for AC connection.</div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-navy-600 border border-slate-700">
+          <div class="text-xs font-mono text-solar-gold mb-1">STAGE C</div>
+          <div class="text-sm font-bold text-white mb-1">Structural Feasibility</div>
+          <div class="text-xs text-slate-300">Determining structural mounting anchor mechanism and wind load resistance requirements.</div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-navy-600 border border-slate-700">
+          <div class="text-xs font-mono text-solar-gold mb-1">STAGE D</div>
+          <div class="text-sm font-bold text-white mb-1">Engineering Layout Report</div>
+          <div class="text-xs text-slate-300">Generating a 3D CAD layout, single line diagram (SLD), and optimized system proposal.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

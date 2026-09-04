@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SolarLeadForm from '../components/SolarLeadForm.astro';
+import CTA from '../components/CTA.astro';
+
+const solutionTypes = [
+  {
+    id: 'residential',
+    title: 'Residential Rooftop Solar Systems',
+    subtitle: 'Designed for Independent Houses, Villas, and Residential Rooftops',
+    image: '/images/indian_residential_solar.png',
+    imageAlt: 'Indian residential rooftop solar installation on RCC terrace',
+    description: 'Residential solar photovoltaic systems enable homeowners to generate clean, renewable electricity directly from their rooftop. By substituting grid-supplied electricity with daytime solar generation, homeowners can manage household utility expenses effectively.',
+    targetAudience: 'Homeowners, villa residents, independent house owners, housing society rooftops.',
+    suitabilityFactors: [
+      'Daytime electricity consumption from air conditioning, pumps, water heaters, and home appliances.',
+      'Unshaded rooftop slab space (approx 80-100 sq.ft per 1 kW).',
+      'Single-phase (up to 3-5 kW) or Three-phase grid connectivity.',
+      'Structural roof condition free of waterlogging or severe degradation.'
+    ],
+    technicalHighlights: 'Uses high-efficiency mono-PERC or TopCon modules paired with single-phase string inverters, IP65 protection, and compact AC/DC distribution boxes with surge protection.'
+  },
+  {
+    id: 'commercial',
+    title: 'Commercial Solar Solutions',
+    subtitle: 'Tailored for Shops, Offices, Warehouses, Schools & Institutions',
+    image: '/images/indian_commercial_solar.png',
+    imageAlt: 'Indian commercial office building rooftop solar installation',
+    description: 'Commercial facilities operate predominantly during daylight hours (9 AM - 6 PM), aligning electricity demand with peak solar generation. Commercial solar systems allow business owners to reduce operational energy overheads.',
+    targetAudience: 'Retail shops, commercial office buildings, educational institutes, diagnostic centers, distribution warehouses.',
+    suitabilityFactors: [
+      'Operational hours matching daylight solar generation windows.',
+      'LT-CT or HT commercial electricity tariff classification.',
+      'Roof structure availability (flat concrete slab, metal shed roof, or elevated parking canopy).',
+      'Available transformer capacity and DISCOM grid connection approvals.'
+    ],
+    technicalHighlights: 'Includes multi-MPPT three-phase string inverters, centralized plant telemetry gateways, busbar trunking integration, and Class 1 electrical protection switchgear.'
+  },
+  {
+    id: 'industrial',
+    title: 'Industrial Solar Solutions',
+    subtitle: 'High-Capacity Engineering for Factories, Manufacturing Plants & Industrial Sheds',
+    image: '/images/indian_industrial_solar.png',
+    imageAlt: 'Indian factory plant metal shed solar installation',
+    description: 'Industrial facilities consume continuous high kilowatt-hour (kWh) loads to run heavy machinery, motors, compressors, and process equipment. Deploying solar PV across large factory roof surfaces provides a clean energy foundation for industrial operations.',
+    targetAudience: 'Manufacturing facilities, textile mills, plastic molding units, food processing plants, cold storage hubs.',
+    suitabilityFactors: [
+      'High continuous daytime base loads.',
+      'Large trapezoidal or standing-seam PEB metal shed roof surface areas.',
+      'HT (High Tension) electrical service connections and dedicated step-up transformers.',
+      'Structural wind load and metal roof load-bearing verification.'
+    ],
+    technicalHighlights: 'Deploys high-capacity three-phase inverters, aluminum rail mounting clamps for standing-seam roofs, harmonic filtering, zero-export controllers where required, and SCADA-compatible monitoring.'
+  }
+];
+---
+
+<BaseLayout
+  title="Solar Solutions | Residential, Commercial & Industrial | VAC Solar"
+  description="Explore customized solar solutions for independent homes, villas, commercial offices, warehouses, and industrial factories with VAC Solar. Detailed engineering assessment guidelines."
+>
+  <!-- Page Header Banner -->
+  <section class="bg-navy text-white py-16 lg:py-20 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-4">
+        <span class="px-3 py-1 rounded bg-navy-600 border border-slate-700 text-solar-gold text-xs font-mono font-bold uppercase tracking-wider">
+          Solutions Knowledge Base
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
+          Solar Energy Solutions Architecture
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Custom solar PV designs engineered specifically for your property class, load requirements, structural specifications, and grid connection terms.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Detailed Breakdown Section -->
+  <section class="py-20 bg-surface-bg border-b border-surface-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      {solutionTypes.map((sol) => (
+        <div id={sol.id} class="rounded-2xl bg-white border border-surface-border overflow-hidden shadow-card-soft space-y-0">
+          
+          <!-- Top Hero Image Banner for each solution -->
+          <div class="relative h-64 sm:h-80 w-full overflow-hidden bg-slate-900">
+            <img
+              src={sol.image}
+              alt={sol.imageAlt}
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+              <div>
+                <span class="px-3 py-1 rounded bg-solar-gold text-navy font-mono font-bold text-xs uppercase tracking-widest shadow-sm mb-2 inline-block">
+                  {sol.id.toUpperCase()} ARCHITECTURE
+                </span>
+                <h2 class="text-3xl font-extrabold font-heading text-white tracking-tight">
+                  {sol.title}
+                </h2>
+                <p class="text-sm font-semibold text-slate-300 mt-0.5">
+                  {sol.subtitle}
+                </p>
+              </div>
+              <a
+                href="#lead-form"
+                class="shrink-0 px-5 py-2.5 rounded-full text-xs font-bold text-navy bg-solar-gold hover:bg-solar-hover transition-colors"
+              >
+                Request Assessment for {sol.id}
+              </a>
+            </div>
+          </div>
+
+          <div class="p-8 sm:p-10 space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+              <div class="lg:col-span-7 space-y-4 text-sm text-surface-textPrimary leading-relaxed">
+                <p>{sol.description}</p>
+                
+                <div>
+                  <h3 class="text-xs font-bold uppercase tracking-wider text-navy-800 mb-2">Target Property Types</h3>
+                  <p class="p-3 rounded-lg bg-surface-bg border border-surface-border text-xs text-navy-700 font-medium">
+                    {sol.targetAudience}
+                  </p>
+                </div>
+
+                <div>
+                  <h3 class="text-xs font-bold uppercase tracking-wider text-navy-800 mb-2">Technical & Hardware Specs</h3>
+                  <p class="p-3 rounded-lg bg-surface-bg border border-surface-border text-xs text-surface-textSecondary">
+                    {sol.technicalHighlights}
+                  </p>
+                </div>
+              </div>
+
+              <div class="lg:col-span-5 p-6 rounded-xl bg-navy text-white space-y-4">
+                <h3 class="text-sm font-bold font-heading text-white flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-energy-green"></span>
+                  Site Feasibility Parameters
+                </h3>
+                <ul class="space-y-3">
+                  {sol.suitabilityFactors.map((factor) => (
+                    <li class="flex items-start text-xs text-slate-300 leading-normal">
+                      <span class="text-energy-green font-bold mr-2">✓</span>
+                      <span>{factor}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      ))}
+
+    </div>
+  </section>
+
+  <!-- Lead Form Anchor Section -->
+  <section id="lead-form" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SolarLeadForm variant="standalone" />
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

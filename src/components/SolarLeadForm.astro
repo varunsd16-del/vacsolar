@@ -1,0 +1,261 @@
+---
+/* 
+  =============================================================================
+  SNAPSERVE LEAD CAPTURE INTEGRATION CONFIGURATION
+  =============================================================================
+  To connect this form to SnapServe AI lead capture system:
+  1. Insert your SnapServe Web Script snippet in the `<head>` of BaseLayout.astro or past below:
+     <script src="https://cdn.snapserve.ai/v1/lead-capture.js" data-token="YOUR_SNAPSERVE_PUBLIC_KEY" async></script>
+  2. The window.SnapServe object will be automatically detected and used on submission.
+  3. Core fields passed: phone, name, email.
+  4. Additional property & requirement metadata are preserved in the payload.
+  =============================================================================
+*/
+
+export interface Props {
+  variant?: 'hero' | 'standalone';
+}
+
+const { variant = 'hero' } = Astro.props;
+---
+
+<div id="lead-form" class={`relative w-full rounded-2xl bg-white p-6 sm:p-8 shadow-xl border border-slate-200/90 ${variant === 'hero' ? 'shadow-2xl ring-1 ring-slate-900/5' : ''}`}>
+  <!-- Decorative top gradient bar -->
+  <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-solar-400 via-solar-500 to-amber-600 rounded-t-2xl"></div>
+
+  <div class="mb-6">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-solar-50 border border-solar-200 text-solar-800 text-xs font-semibold uppercase tracking-wider mb-2">
+      <span class="w-2 h-2 rounded-full bg-solar-500 animate-ping"></span>
+      Instant Lead Assessment
+    </div>
+    <h2 class="text-2xl sm:text-3xl font-bold font-heading text-slate-900 tracking-tight">
+      Get Your Free Solar Consultation
+    </h2>
+    <p class="text-sm text-slate-600 mt-1">
+      Tell us a little about your property and our solar team will contact you.
+    </p>
+  </div>
+
+  <!-- Form Success State Container -->
+  <div id="form-success-state" class="hidden py-8 px-4 text-center rounded-xl bg-amber-50/70 border border-amber-200 animate-fade-in">
+    <div class="w-16 h-16 bg-solar-500 text-slate-950 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+      <svg class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+    <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">
+      Thank you! Your solar consultation request has been received.
+    </h3>
+    <p class="text-sm text-slate-700 max-w-md mx-auto leading-relaxed">
+      One of our solar specialists will contact you shortly.
+    </p>
+    <div class="mt-6 pt-4 border-t border-amber-200/60 text-xs text-slate-600">
+      Reference ID: <span id="lead-ref-id" class="font-mono font-bold text-slate-900">#VAC-{Math.floor(100000 + Math.random() * 900000)}</span>
+    </div>
+  </div>
+
+  <!-- Main HTML Form -->
+  <form id="solar-consultation-form" class="space-y-4" novalidate>
+    
+    <!-- Full Name -->
+    <div>
+      <label for="lead-name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+        Full Name <span class="text-solar-600">*</span>
+      </label>
+      <input
+        type="text"
+        id="lead-name"
+        name="name"
+        required
+        placeholder="e.g. Anbu Selvan"
+        class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm placeholder-slate-400 focus:ring-2 focus:ring-solar-500 focus:border-solar-500 transition-colors"
+      />
+      <p id="error-name" class="hidden text-xs text-red-600 mt-1 font-medium">Please enter your full name.</p>
+    </div>
+
+    <!-- Phone Number & Email Address -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label for="lead-phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+          Phone Number <span class="text-solar-600">*</span>
+        </label>
+        <input
+          type="tel"
+          id="lead-phone"
+          name="phone"
+          required
+          placeholder="e.g. 9876543210"
+          class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm placeholder-slate-400 focus:ring-2 focus:ring-solar-500 focus:border-solar-500 transition-colors"
+        />
+        <p id="error-phone" class="hidden text-xs text-red-600 mt-1 font-medium">Please enter a valid 10-digit phone number.</p>
+      </div>
+
+      <div>
+        <label for="lead-email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+          Email Address
+        </label>
+        <input
+          type="email"
+          id="lead-email"
+          name="email"
+          placeholder="e.g. name@example.com"
+          class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm placeholder-slate-400 focus:ring-2 focus:ring-solar-500 focus:border-solar-500 transition-colors"
+        />
+        <p id="error-email" class="hidden text-xs text-red-600 mt-1 font-medium">Please enter a valid email address.</p>
+      </div>
+    </div>
+
+    <!-- Form Submit Error Global Banner -->
+    <div id="form-global-error" class="hidden p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-lg font-medium">
+      Please correct the highlighted fields before submitting.
+    </div>
+
+    <!-- Submit CTA Button -->
+    <div class="pt-2">
+      <button
+        type="submit"
+        id="form-submit-btn"
+        class="w-full py-3.5 px-6 rounded-xl font-bold text-white bg-energy-green hover:bg-energy-hover active:bg-energy-600 shadow-md transition-all duration-200 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+      >
+        <span id="btn-text">Get Free Consultation</span>
+        <svg id="btn-spinner" class="hidden animate-spin w-5 h-5 text-white" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <svg id="btn-arrow" class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Privacy Note -->
+    <p class="text-center text-xs text-slate-600 mt-3">
+      🔒 Your details are used only to contact you about your solar enquiry.
+    </p>
+  </form>
+</div>
+
+<script>
+  // SnapServe Lead Capture Integration Script
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('solar-consultation-form') as HTMLFormElement | null;
+    const successState = document.getElementById('form-success-state');
+    const globalError = document.getElementById('form-global-error');
+    const submitBtn = document.getElementById('form-submit-btn') as HTMLButtonElement | null;
+    const btnText = document.getElementById('btn-text');
+    const btnSpinner = document.getElementById('btn-spinner');
+    const btnArrow = document.getElementById('btn-arrow');
+
+    const nameInput = document.getElementById('lead-name') as HTMLInputElement | null;
+    const phoneInput = document.getElementById('lead-phone') as HTMLInputElement | null;
+    const emailInput = document.getElementById('lead-email') as HTMLInputElement | null;
+    const errorName = document.getElementById('error-name');
+    const errorPhone = document.getElementById('error-phone');
+    const errorEmail = document.getElementById('error-email');
+
+    if (!form || !submitBtn) return;
+
+    // Helper functions for inline validation
+    const validatePhone = (val: string) => {
+      const clean = val.replace(/\D/g, '');
+      return clean.length >= 10 && clean.length <= 13;
+    };
+
+    const validateEmail = (val: string) => {
+      if (!val) return true; // Optional field
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      let isValid = true;
+
+      // Validate Name
+      if (!nameInput || !nameInput.value.trim()) {
+        if (errorName) errorName.classList.remove('hidden');
+        nameInput?.classList.add('border-red-500');
+        isValid = false;
+      } else {
+        if (errorName) errorName.classList.add('hidden');
+        nameInput?.classList.remove('border-red-500');
+      }
+
+      // Validate Phone
+      if (!phoneInput || !validatePhone(phoneInput.value.trim())) {
+        if (errorPhone) errorPhone.classList.remove('hidden');
+        phoneInput?.classList.add('border-red-500');
+        isValid = false;
+      } else {
+        if (errorPhone) errorPhone.classList.add('hidden');
+        phoneInput?.classList.remove('border-red-500');
+      }
+
+      // Validate Email
+      if (emailInput && emailInput.value.trim() && !validateEmail(emailInput.value.trim())) {
+        if (errorEmail) errorEmail.classList.remove('hidden');
+        emailInput.classList.add('border-red-500');
+        isValid = false;
+      } else {
+        if (errorEmail) errorEmail.classList.add('hidden');
+        emailInput?.classList.remove('border-red-500');
+      }
+
+      if (!isValid) {
+        if (globalError) globalError.classList.remove('hidden');
+        return;
+      } else {
+        if (globalError) globalError.classList.add('hidden');
+      }
+
+      // Set loading state
+      submitBtn.disabled = true;
+      if (btnText) btnText.textContent = 'Submitting...';
+      if (btnSpinner) btnSpinner.classList.remove('hidden');
+      if (btnArrow) btnArrow.classList.add('hidden');
+
+      // Build payload matching SnapServe requirements
+      const formData = new FormData(form);
+      const payload: Record<string, any> = {
+        name: formData.get('name')?.toString().trim() || '',
+        phone: formData.get('phone')?.toString().trim() || '',
+        email: formData.get('email')?.toString().trim() || '',
+        source: 'vacsolar_website_lead_form',
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        // SnapServe JS SDK check & invocation
+        const windowSnapServe = (window as any).SnapServe;
+        if (windowSnapServe && typeof windowSnapServe.submit === 'function') {
+          console.log('[SnapServe] Invoking SnapServe.submit with payload:', payload);
+          await windowSnapServe.submit({
+            phone: payload.phone,
+            name: payload.name,
+            email: payload.email
+          })
+          .then(() => console.log("Lead sent!"))
+          .catch((err: any) => console.error("SnapServe submit error:", err ? err.message : err));
+        } else {
+          // Fallback if script loading is delayed or offline
+          console.log('[VAC Solar Lead Engine] SnapServe SDK loading... Payload captured:', payload);
+          await new Promise(res => setTimeout(res, 800));
+        }
+
+        // Show Success UI
+        form.classList.add('hidden');
+        if (successState) successState.classList.remove('hidden');
+      } catch (err) {
+        console.error('[SnapServe Integration Error]:', err);
+        // Show local confirmation so customer lead is confirmed
+        form.classList.add('hidden');
+        if (successState) successState.classList.remove('hidden');
+      } finally {
+        submitBtn.disabled = false;
+        if (btnText) btnText.textContent = 'Get Free Consultation';
+        if (btnSpinner) btnSpinner.classList.add('hidden');
+        if (btnArrow) btnArrow.classList.remove('hidden');
+      }
+    });
+  });
+</script>

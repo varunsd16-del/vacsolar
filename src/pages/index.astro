@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SolarSolutions from '../components/SolarSolutions.astro';
+import HowSolarWorks from '../components/HowSolarWorks.astro';
+import SolarComponents from '../components/SolarComponents.astro';
+import SolarSizing from '../components/SolarSizing.astro';
+import SolarSavings from '../components/SolarSavings.astro';
+import SiteSurvey from '../components/SiteSurvey.astro';
+import InstallationProcess from '../components/InstallationProcess.astro';
+import SolarTamilNadu from '../components/SolarTamilNadu.astro';
+import SolarBuyerGuide from '../components/SolarBuyerGuide.astro';
+import FAQ, { faqList } from '../components/FAQ.astro';
+import CTA from '../components/CTA.astro';
+
+// Use top 6 FAQs for home page structured schema
+const homeFaqs = faqList.slice(0, 6);
+---
+
+<BaseLayout
+  title="VAC Solar | Smart Solar Solutions for Homes & Businesses"
+  description="VAC Solar provides customized rooftop solar solutions for homes, commercial properties and industrial facilities. Backed by site surveys, engineering component selection and transparent sizing."
+  faqSchema={homeFaqs}
+>
+  <Hero />
+  <SolarSolutions />
+  <HowSolarWorks />
+  <SolarComponents />
+  <SolarSizing />
+  <SolarSavings />
+  <SiteSurvey />
+  <InstallationProcess />
+  <SolarTamilNadu />
+  <SolarBuyerGuide />
+  <FAQ limit={6} />
+  <CTA />
+</BaseLayout>

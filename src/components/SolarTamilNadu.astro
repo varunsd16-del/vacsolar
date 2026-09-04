@@ -1,0 +1,119 @@
+---
+const tnPoints = [
+  { title: 'High Solar Irradiance', text: 'Tamil Nadu benefits from high Global Horizontal Irradiance (GHI) across most districts (Chennai, Coimbatore, Madurai, Salem, Tiruchirappalli), yielding high annual specific kWh generation.' },
+  { title: 'Residential & Commercial Consumption', text: 'Both residential tariffs (with tiered slabs) and commercial LT-CT/HT tariffs present favorable conditions for daytime solar offset.' },
+  { title: 'Coastal & Climatic Site Engineering', text: 'Installations near coastal zones require hot-dip galvanized mounting structures (minimum 80 microns coating) and stainless steel hardware to resist marine corrosion.' },
+  { title: 'Thermal Coefficient Considerations', text: 'Summer ambient temperatures exceeding 40°C require panels with superior temperature coefficients to minimize heat-induced voltage drop.' },
+  { title: 'DISCOM Connection Readiness', text: 'Site designs account for local distribution transformer capacities, bi-directional net meter availability, and utility inspection compliance.' }
+];
+---
+
+<section id="tamil-nadu-solar" class="py-20 bg-white border-b border-slate-200/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Content -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-energy-light border border-energy-green/20 text-energy-green text-xs font-bold uppercase tracking-wider">
+          Regional Engineering Focus
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-navy-800 tracking-tight">
+          Solar Solutions for Tamil Nadu
+        </h2>
+
+        <p class="text-base sm:text-lg text-surface-textSecondary leading-relaxed">
+          Operating across Tamil Nadu requires technical adaptation to regional climate factors, high solar irradiation profiles, and localized utility connection requirements.
+        </p>
+
+        <!-- Points Grid -->
+        <div class="space-y-4 pt-2">
+          {tnPoints.map((item) => (
+            <div class="p-4 rounded-xl bg-surface-bg border border-surface-border flex items-start gap-3">
+              <div class="w-6 h-6 rounded-md bg-energy-green text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                ✓
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-navy-800">{item.title}</h3>
+                <p class="text-xs text-surface-textSecondary mt-0.5 leading-relaxed">{item.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Mandatory Explicit Disclaimer Box -->
+        <div class="p-4 rounded-xl bg-amber-50 border border-amber-300 text-slate-900 text-xs font-medium leading-relaxed">
+          <span class="font-bold text-amber-900">⚠️ Regulatory & Scheme Notice:</span>
+          Rules, tariffs, DISCOM net-metering guidelines, and applicable government programs can change over time. Confirm current requirements and program applicability during your consultation.
+        </div>
+
+      </div>
+
+      <!-- Right Column: Tamil Nadu Photo & Specs Card -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Authentic Tamil Nadu Solar Rooftop Image -->
+        <div class="rounded-2xl overflow-hidden border border-surface-border shadow-card-soft h-56 w-full relative">
+          <img
+            src="/images/indian_tamilnadu_solar.png"
+            alt="Rooftop solar installation in Tamil Nadu India"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-3 left-3 px-3 py-1 rounded bg-black/70 backdrop-blur-sm text-white text-xs font-semibold">
+            🌴 Tamil Nadu Solar Site
+          </div>
+        </div>
+
+        <div class="p-6 sm:p-8 rounded-2xl bg-navy text-white shadow-2xl border border-slate-800 space-y-6">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+            <div>
+              <div class="text-xs font-mono text-solar-gold font-bold uppercase">Region Insights</div>
+              <div class="text-xl font-bold font-heading text-white">TN Irradiance Profile</div>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-navy-600 text-xs text-slate-300 font-mono">Latitude 8° - 13° N</span>
+          </div>
+
+          <div class="space-y-4 text-xs text-slate-300">
+            <div class="flex justify-between py-2 border-b border-slate-800">
+              <span class="text-slate-400">Average Daily Sun Hours:</span>
+              <span class="font-bold text-white font-mono">4.5 - 5.5 Hours / day</span>
+            </div>
+
+            <div class="flex justify-between py-2 border-b border-slate-800">
+              <span class="text-slate-400">Recommended Panel Tilt:</span>
+              <span class="font-bold text-white font-mono">10° - 15° True South</span>
+            </div>
+
+            <div class="flex justify-between py-2 border-b border-slate-800">
+              <span class="text-slate-400">Wind Load Design Rating:</span>
+              <span class="font-bold text-white font-mono">Up to 180 km/h</span>
+            </div>
+
+            <div class="flex justify-between py-2 border-b border-slate-800">
+              <span class="text-slate-400">Structural Coating Standard:</span>
+              <span class="font-bold text-white font-mono">HDGI / Anodized Al</span>
+            </div>
+
+            <div class="flex justify-between py-2">
+              <span class="text-slate-400">Grid Frequency Standard:</span>
+              <span class="font-bold text-white font-mono">50 Hz ± 0.5 Hz</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 text-center">
+            <a
+              href="/#lead-form"
+              class="w-full inline-flex items-center justify-center px-5 py-3 rounded-full font-bold text-navy bg-solar-gold hover:bg-solar-hover transition-colors"
+            >
+              Consult TN Solar Specialist
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,150 @@
+---
+import SolarLeadForm from './SolarLeadForm.astro';
+---
+
+<section class="relative bg-[#F7F9FC] text-navy-700 pt-10 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
+  
+  <!-- Modern Villa Background Graphic with Soft Fade Gradients -->
+  <div class="absolute top-0 right-0 w-full lg:w-[62%] h-full z-0 opacity-40 lg:opacity-70 pointer-events-none overflow-hidden">
+    <img
+      src="/images/modern_solar_villa_hero.png"
+      alt="Modern Solar Villa Rooftop Array"
+      class="w-full h-full object-cover object-center lg:object-right"
+    />
+    <!-- Gradient overlays to blend into #F7F9FC -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#F7F9FC] via-[#F7F9FC]/70 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#F7F9FC] via-transparent to-[#F7F9FC]/30"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- Hero Left Text Column -->
+      <div class="lg:col-span-7 space-y-6 text-left">
+        
+        <!-- Top Green Pill Badge matching reference screenshot -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-energy-light border border-energy-green/20 text-energy-green text-xs font-bold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-energy-green animate-pulse"></span>
+          Solar for a Brighter Tomorrow
+        </div>
+
+        <!-- Main Headline in Deep Navy #0B1F33 -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading tracking-tight leading-[1.1] text-navy-800">
+          Power Your Future With Solar
+        </h1>
+
+        <!-- Subheadline in #5B6878 -->
+        <p class="text-lg sm:text-xl text-surface-textSecondary max-w-xl font-medium leading-relaxed">
+          Smart solar solutions designed around your electricity usage, property and energy goals.
+        </p>
+
+        <!-- 4 Feature Badges Row matching reference screenshot -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-xl">
+          <div class="flex items-center gap-2 p-2 rounded-xl bg-white/80 backdrop-blur-sm border border-surface-border shadow-sm">
+            <div class="w-8 h-8 rounded-lg bg-solar-100 flex items-center justify-center text-solar font-bold text-sm shrink-0">👛</div>
+            <span class="text-xs font-bold text-navy-800 leading-tight">Lower electricity costs</span>
+          </div>
+
+          <div class="flex items-center gap-2 p-2 rounded-xl bg-white/80 backdrop-blur-sm border border-surface-border shadow-sm">
+            <div class="w-8 h-8 rounded-lg bg-energy-light flex items-center justify-center text-energy-green font-bold text-sm shrink-0">🍃</div>
+            <span class="text-xs font-bold text-navy-800 leading-tight">Cleaner environment</span>
+          </div>
+
+          <div class="flex items-center gap-2 p-2 rounded-xl bg-white/80 backdrop-blur-sm border border-surface-border shadow-sm">
+            <div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-navy-800 font-bold text-sm shrink-0">🏠</div>
+            <span class="text-xs font-bold text-navy-800 leading-tight">Higher property value</span>
+          </div>
+
+          <div class="flex items-center gap-2 p-2 rounded-xl bg-white/80 backdrop-blur-sm border border-surface-border shadow-sm">
+            <div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-navy-800 font-bold text-sm shrink-0">🛡️</div>
+            <span class="text-xs font-bold text-navy-800 leading-tight">Reliable & long lasting</span>
+          </div>
+        </div>
+
+        <!-- Dual CTA Buttons matching screenshot -->
+        <div class="flex flex-col sm:flex-row items-center gap-4 pt-4">
+          <a
+            href="#lead-form"
+            class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-full text-base font-bold text-white bg-navy hover:bg-navy-dark shadow-md hover:shadow-lg transition-all duration-200"
+          >
+            Get Free Solar Consultation
+            <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+
+          <a
+            href="/solar-solutions"
+            class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-full text-base font-bold text-navy-800 bg-white hover:bg-slate-50 border border-surface-border shadow-sm transition-all duration-200 gap-2"
+          >
+            <div class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-navy-800">
+              <svg class="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+            Watch How It Works
+          </a>
+        </div>
+
+        <!-- Trust Subtext -->
+        <div class="pt-2 text-xs font-semibold tracking-wider text-surface-textSecondary uppercase">
+          Residential <span class="mx-2 text-slate-300">|</span> Commercial <span class="mx-2 text-slate-300">|</span> Industrial
+        </div>
+
+      </div>
+
+      <!-- Hero Right Lead Form Card Column -->
+      <div class="lg:col-span-5 relative z-10">
+        <SolarLeadForm variant="hero" />
+      </div>
+
+    </div>
+
+    <!-- Bottom Floating Trust Card Bar matching reference screenshot -->
+    <div class="mt-16 sm:mt-20 p-4 sm:p-6 rounded-2xl bg-white border border-surface-border shadow-card-soft grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <div class="flex items-center gap-3 p-2">
+        <div class="w-12 h-12 rounded-xl bg-energy-light text-energy-green flex items-center justify-center font-bold text-xl shrink-0">
+          🎧
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-navy-800">Expert consultation</h3>
+          <p class="text-xs text-surface-textSecondary mt-0.5">Get the right guidance for your needs</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 p-2">
+        <div class="w-12 h-12 rounded-xl bg-energy-light text-energy-green flex items-center justify-center font-bold text-xl shrink-0">
+          ⚙️
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-navy-800">End-to-end support</h3>
+          <p class="text-xs text-surface-textSecondary mt-0.5">From design to installation</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 p-2">
+        <div class="w-12 h-12 rounded-xl bg-energy-light text-energy-green flex items-center justify-center font-bold text-xl shrink-0">
+          📄
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-navy-800">Professional site assessment</h3>
+          <p class="text-xs text-surface-textSecondary mt-0.5">Solutions built around your property</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 p-2">
+        <div class="w-12 h-12 rounded-xl bg-energy-light text-energy-green flex items-center justify-center font-bold text-xl shrink-0">
+          🍃
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-navy-800">Sustainable future</h3>
+          <p class="text-xs text-surface-textSecondary mt-0.5">Clean energy for generations</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

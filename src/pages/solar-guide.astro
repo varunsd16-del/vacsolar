@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<BaseLayout
+  title="Comprehensive Rooftop Solar Buyer & Engineering Guide | VAC Solar"
+  description="A complete structured educational guide covering rooftop solar basics, component selection, photovoltaic generation, system sizing, shading analysis, maintenance, and net metering."
+>
+  <!-- Page Header Banner -->
+  <section class="bg-slate-900 text-white py-16 lg:py-20 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-4">
+        <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-solar-400 text-xs font-mono font-bold uppercase tracking-wider">
+          AI & Voice Consultant Knowledge Base
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
+          Rooftop Solar Engineering Guide
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Detailed technical reference on rooftop photovoltaic generation, inverter technology, structural requirements, system sizing, shading physics, and electrical safety.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Body -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 text-slate-800">
+      
+      <!-- Chapter 1: Solar Fundamentals -->
+      <article id="fundamentals" class="space-y-4">
+        <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-solar-700 uppercase tracking-wider">
+          Chapter 01
+        </div>
+        <h2 class="text-3xl font-bold font-heading text-slate-900">
+          Photovoltaic Generation Fundamentals
+        </h2>
+        <p class="text-sm sm:text-base leading-relaxed text-slate-700">
+          Solar photovoltaic (PV) generation relies on the photoelectric effect, wherein photons of light striking silicon semiconductor cells excite valence electrons into conduction. This process generates direct current (DC) electricity across the module array.
+        </p>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 space-y-2">
+          <p><span class="font-bold text-slate-900">Irradiance Impact:</span> Power generation is directly proportional to solar irradiance (measured in Watts per square meter, W/m²). Peak sun hours represent periods where irradiance reaches or exceeds 1,000 W/m².</p>
+          <p><span class="font-bold text-slate-900">Spectral Response:</span> Solar panels absorb light across the visible spectrum. Diffuse light on cloudy days continues to produce power, though at reduced amperage.</p>
+        </div>
+      </article>
+
+      <!-- Chapter 2: Solar Panels & Cell Technologies -->
+      <article id="panel-tech" class="space-y-4 pt-8 border-t border-slate-200">
+        <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-solar-700 uppercase tracking-wider">
+          Chapter 02
+        </div>
+        <h2 class="text-3xl font-bold font-heading text-slate-900">
+          Solar Panel Technologies & Characteristics
+        </h2>
+        <p class="text-sm sm:text-base leading-relaxed text-slate-700">
+          Modern solar PV arrays primarily use crystalline silicon modules. Key module technologies include Mono-PERC (Passivated Emitter and Rear Cell) and N-Type TOPCon (Tunnel Oxide Passivated Contact) cells.
+        </p>
+        <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
+          <li class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <strong class="text-slate-900">Mono-PERC Modules:</strong> High efficiency (20%-21%), cost-effective standard for residential and commercial rooftop applications.
+          </li>
+          <li class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <strong class="text-slate-900">N-Type TOPCon Modules:</strong> Advanced efficiency (21.5%-23%), lower annual degradation rates (~0.4%/yr), and superior temperature coefficient performance in hot climates.
+          </li>
+          <li class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <strong class="text-slate-900">Bifacial Modules:</strong> Absorbs irradiance from both front glass and reflected ground albedo on the rear side; ideal for elevated flat RCC roofs or ground mounts.
+          </li>
+        </ul>
+      </article>
+
+      <!-- Chapter 3: Inverter Architecture -->
+      <article id="inverters" class="space-y-4 pt-8 border-t border-slate-200">
+        <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-solar-700 uppercase tracking-wider">
+          Chapter 03
+        </div>
+        <h2 class="text-3xl font-bold font-heading text-slate-900">
+          Solar Inverters & Maximum Power Point Tracking (MPPT)
+        </h2>
+        <p class="text-sm sm:text-base leading-relaxed text-slate-700">
+          The solar inverter converts variable DC voltage from the solar array into clean 50Hz Alternating Current (AC) matching utility grid voltage. MPPT algorithms continuously adjust internal impedance to extract peak wattage under changing sunlight and cloud conditions.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="font-bold text-slate-900 mb-1">String Inverters</div>
+            <p class="text-slate-600">Centralized inverter connecting multiple panel series strings. Efficient, highly reliable, and easy to maintain for unshaded rooftops.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="font-bold text-slate-900 mb-1">Microinverters / DC Optimizers</div>
+            <p class="text-slate-600">Module-level power electronics attached directly to individual panels. Maximizes yield on roofs with partial shading or multiple orientation angles.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Chapter 4: System Sizing Methodology -->
+      <article id="sizing-method" class="space-y-4 pt-8 border-t border-slate-200">
+        <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-solar-700 uppercase tracking-wider">
+          Chapter 04
+        </div>
+        <h2 class="text-3xl font-bold font-heading text-slate-900">
+          Engineering System Sizing Methodology
+        </h2>
+        <p class="text-sm sm:text-base leading-relaxed text-slate-700">
+          Solar system sizing requires analyzing monthly unit (kWh) consumption over a 12-month period, daytime load fractions, usable shadow-free rooftop square footage, and grid service phase limits.
+        </p>
+        <div class="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-slate-900 text-xs sm:text-sm space-y-2">
+          <div class="font-bold text-slate-900">Standard Sizing Benchmarks:</div>
+          <p>• 1 kW system requires approx 80-100 sq.ft of unshaded roof area.</p>
+          <p>• 1 kW system generates approx 4 to 4.5 kWh (units) per day under average regional sun irradiance.</p>
+          <p>• System sizing should never be determined purely from rupee bill values due to slab tariffs and non-energy fixed charges.</p>
+        </div>
+      </article>
+
+      <!-- Chapter 5: Electrical Protection & Safety -->
+      <article id="protection" class="space-y-4 pt-8 border-t border-slate-200">
+        <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-solar-700 uppercase tracking-wider">
+          Chapter 05
+        </div>
+        <h2 class="text-3xl font-bold font-heading text-slate-900">
+          Electrical Protection & Safety Engineering
+        </h2>
+        <p class="text-sm sm:text-base leading-relaxed text-slate-700">
+          Safety switchgear protects property occupants and maintenance technicians from electrical faults, overcurrent, and voltage surges.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+            <div class="font-bold text-slate-900">DC Protection Box (DPB)</div>
+            <p class="text-slate-600">Houses rotary DC isolators, DC fuses rated for PV string voltages (1000V DC), and Type 2 DC Surge Protection Devices (SPD).</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+            <div class="font-bold text-slate-900">AC Distribution Board (ACDB)</div>
+            <p class="text-slate-600">Houses MCBs/MCCBs, Residual Current Circuit Breakers (RCCB), and Type 2 AC Surge Suppressors.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+            <div class="font-bold text-slate-900">Dual Earthing System</div>
+            <p class="text-slate-600">Independent copper-bonded chemical earthing pits for DC structure grounding and AC electrical neutral/casing grounding.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+            <div class="font-bold text-slate-900">Lightning Protection</div>
+            <p class="text-slate-600">Dedicated lightning arrestor (LA) installed at highest rooftop point providing an atmospheric discharge earth path.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Chapter 6: Maintenance & Performance -->
+      <article id="maintenance" class="space-y-4 pt-8 border-t border-slate-200">
+        <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-solar-700 uppercase tracking-wider">
+          Chapter 06
+        </div>
+        <h2 class="text-3xl font-bold font-heading text-slate-900">
+          Operation, Maintenance & Panel Cleaning
+        </h2>
+        <p class="text-sm sm:text-base leading-relaxed text-slate-700">
+          Solar arrays operate without moving parts, requiring straightforward maintenance routines. Dust, urban soot, and bird droppings obscure solar cell glass, reducing generation by 5% to 15% if uncleaned.
+        </p>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 space-y-2">
+          <p><strong class="text-slate-900">Cleaning Protocol:</strong> Clean panels with low-mineral water during early morning or late evening hours when panels are cool to prevent thermal glass shock.</p>
+          <p><strong class="text-slate-900">Performance Ratio (PR):</strong> Monitored remotely via inverter Wi-Fi telemetry to compare actual yield against irradiance benchmarks and trigger maintenance alerts.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

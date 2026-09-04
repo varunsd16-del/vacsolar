@@ -1,0 +1,115 @@
+---
+const guideTopics = [
+  {
+    num: '01',
+    title: 'Electricity Consumption History',
+    summary: 'Evaluating 12 months of utility bill statements reveals seasonal usage spikes, daytime vs nighttime consumption ratios, and baseline kilowatt-hour (kWh) demands.'
+  },
+  {
+    num: '02',
+    title: 'Rooftop Usable Area & Structure',
+    summary: 'Ensuring your roof slab or metal shed has adequate shadow-free square footage (approx 80-100 sq.ft per 1 kW) and structural strength to support mounting deadweight.'
+  },
+  {
+    num: '03',
+    title: 'Shading & Obstacle Plotting',
+    summary: 'Identifying shadow obstructions from adjacent buildings, parapet walls, staircase headrooms, or trees during the critical 9:00 AM to 4:00 PM solar generation window.'
+  },
+  {
+    num: '04',
+    title: 'Property Rights & Building Approvals',
+    summary: 'Confirming sole roof ownership or securing co-owner / society NOC permissions for apartment buildings or shared commercial roofs prior to installation.'
+  },
+  {
+    num: '05',
+    title: 'Electrical Infrastructure & Metering',
+    summary: 'Auditing existing main distribution boards, earth resistance, busbar capacity, and single-phase vs three-phase service line connections.'
+  },
+  {
+    num: '06',
+    title: 'System Capacity & Phase Matching',
+    summary: 'Matching solar inverter output phase to your utility grid connection. Systems above 3 kW or 5 kW typically require three-phase grid connectivity.'
+  },
+  {
+    num: '07',
+    title: 'Inverter Technology Selection',
+    summary: 'Choosing between string inverters (cost-effective for uniform unshaded roofs) and microinverters / optimizers (ideal for complex multi-oriented or shaded roofs).'
+  },
+  {
+    num: '08',
+    title: 'Cable Routing & Inverter Placement',
+    summary: 'Selecting shaded, ventilated wall locations for inverters and short, low-loss DC/AC cable conduits to minimize voltage drops.'
+  },
+  {
+    num: '09',
+    title: 'Routine Maintenance & Panel Cleaning',
+    summary: 'Establishing periodic water washing routines to remove dust, bird droppings, and industrial soot that degrade light transmission.'
+  },
+  {
+    num: '10',
+    title: 'Real-Time Telemetry & Monitoring',
+    summary: 'Utilizing cloud-connected Wi-Fi / 4G monitoring portals to track daily yield, efficiency metrics, and receive instant fault diagnostic alerts.'
+  },
+  {
+    num: '11',
+    title: 'Warranty Structure Differentiation',
+    summary: 'Understanding the distinct difference between Module Product Warranties (workmanship: typically 10-12 yrs) and Linear Power Performance Warranties (e.g. 25 yrs at ~80% output).'
+  },
+  {
+    num: '12',
+    title: 'Future Energy Needs Planning',
+    summary: 'Accounting for planned electrical additions such as Electric Vehicles (EVs), additional air conditioners, or machinery expansions when sizing initial inverter capacity.'
+  }
+];
+---
+
+<section id="solar-guide" class="py-20 bg-slate-50 border-b border-slate-200/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-solar-100 border border-solar-200 text-solar-900 text-xs font-bold uppercase tracking-wider mb-4">
+        AI & Customer Knowledge Base
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 tracking-tight">
+        What Should I Know Before Installing Solar?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 mt-4 leading-relaxed">
+        A comprehensive buyer checklist covering 12 critical technical, structural, financial, and operational factors.
+      </p>
+    </div>
+
+    <!-- 12 Topics Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {guideTopics.map((topic) => (
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-card-soft hover:shadow-card-hover transition-all duration-200">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-mono text-xs font-bold text-solar-700 bg-slate-100 px-2.5 py-1 rounded">
+              TOPIC {topic.num}
+            </span>
+          </div>
+          <h3 class="text-lg font-bold font-heading text-slate-900 mb-2">
+            {topic.title}
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            {topic.summary}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Deep Guide Link Card -->
+    <div class="p-8 rounded-2xl bg-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-xl font-bold font-heading text-white">Looking for the full technical Solar Educational Guide?</h3>
+        <p class="text-xs sm:text-sm text-slate-300 mt-1">Read our comprehensive 5,000-word structured knowledge guide optimized for solar buyers and SnapServe AI agents.</p>
+      </div>
+      <a
+        href="/solar-guide"
+        class="shrink-0 px-6 py-3 rounded-xl font-bold text-slate-950 bg-solar-400 hover:bg-solar-500 transition-colors"
+      >
+        Read Full Solar Guide →
+      </a>
+    </div>
+
+  </div>
+</section>

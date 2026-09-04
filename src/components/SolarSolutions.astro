@@ -1,0 +1,176 @@
+---
+const solutions = [
+  {
+    id: 'residential',
+    title: 'Residential Solar Systems',
+    subtitle: 'Clean power engineered for homes, villas & residential rooftops',
+    image: '/images/indian_residential_solar.png',
+    imageAlt: 'Indian residential house rooftop solar panel array',
+    target: ['Independent Houses', 'Villas', 'Residential Rooftops'],
+    summary: 'Residential solar PV systems allow homeowners to generate clean electricity directly from their roof, reducing reliance on grid power during peak daylight hours.',
+    details: 'System suitability depends on your household load profile, daily electricity usage pattern, available unshaded rooftop area, roof structural integrity, and local DISCOM connection parameters. Proper sizing ensures optimal self-consumption.',
+    considerations: [
+      'Daytime household electricity consumption profile',
+      'Unshaded rooftop area & shade-free solar windows',
+      'Roof mounting options (RCC slab vs sloping roof)',
+      'Single-phase vs Three-phase electrical grid connection'
+    ],
+    badge: 'Residential',
+    ctaText: 'Explore Residential Solar',
+    href: '/solar-solutions#residential'
+  },
+  {
+    id: 'commercial',
+    title: 'Commercial Solar Solutions',
+    subtitle: 'Offices, retail establishments, schools & commercial facilities',
+    image: '/images/indian_commercial_solar.png',
+    imageAlt: 'Indian commercial office building rooftop solar system',
+    target: ['Shops & Outlets', 'Office Complexes', 'Warehouses', 'Commercial Buildings'],
+    summary: 'Commercial establishments operating during daylight hours are ideally positioned for solar PV power, aligning business operating schedules with maximum solar irradiance.',
+    details: 'Commercial solar evaluations analyze daytime operational loads, peak demand charges, available roof/canopy surfaces, internal distribution transformers, and grid export policy options to optimize energy overheads.',
+    considerations: [
+      'Operating schedules aligned with solar generation hours',
+      'Roof membrane integrity and parapet shadow angles',
+      'Sanctioned demand load & LT/HT electrical metering',
+      'Site safety standards and accessible cable raceways'
+    ],
+    badge: 'Commercial',
+    ctaText: 'Explore Commercial Solar',
+    href: '/solar-solutions#commercial'
+  },
+  {
+    id: 'industrial',
+    title: 'Industrial Solar Solutions',
+    subtitle: 'Factories, manufacturing units & large-scale industrial plants',
+    image: '/images/indian_industrial_solar.png',
+    imageAlt: 'Indian factory manufacturing plant metal shed solar installation',
+    target: ['Manufacturing Plants', 'Factories & Sheds', 'Logistics Hubs', 'Cold Storage Facilities'],
+    summary: 'Industrial facilities with large roof surface areas or adjacent land can deploy high-capacity solar PV arrays to offset significant continuous manufacturing power demands.',
+    details: 'Industrial solar projects require rigorous technical site engineering, structural wind load analysis on metal sheds, harmonic distortion evaluation, power factor coordination, and dedicated HT electrical protection schemes.',
+    considerations: [
+      'Structural load-bearing capacity of PEB / industrial sheds',
+      'HT electrical breaker panels & transformer capacities',
+      'Continuous industrial load profile & harmonic safety',
+      'Ground mount vs elevated shed mounting structures'
+    ],
+    badge: 'Industrial',
+    ctaText: 'Explore Industrial Solar',
+    href: '/solar-solutions#industrial'
+  }
+];
+---
+
+<section id="solar-solutions" class="py-20 bg-slate-50 border-b border-slate-200/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-solar-100 border border-solar-200 text-solar-900 text-xs font-bold uppercase tracking-wider mb-4">
+        Engineering-Grade Solutions
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 tracking-tight">
+        Tailored Solar Solutions For Every Property
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 mt-4 leading-relaxed">
+        Whether you are powering a single-family home, a multi-story office, or a manufacturing plant, VAC Solar designs solar PV installations suited to your specific electrical setup and site conditions.
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {solutions.map((item) => (
+        <div class="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-card-soft hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <!-- Card Image -->
+            <div class="relative h-52 w-full overflow-hidden bg-slate-100">
+              <img
+                src={item.image}
+                alt={item.imageAlt}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              <div class="absolute top-3 left-3">
+                <span class="px-3 py-1 rounded-md bg-white/90 backdrop-blur-sm border border-slate-200 text-slate-900 text-xs font-bold uppercase tracking-wide shadow-sm">
+                  {item.badge}
+                </span>
+              </div>
+            </div>
+
+            <div class="p-7">
+              <!-- Title & Subtitle -->
+              <h3 class="text-2xl font-bold font-heading text-slate-900 tracking-tight group-hover:text-energy-green transition-colors">
+                {item.title}
+              </h3>
+              <p class="text-xs font-semibold text-slate-500 mt-1 mb-4">
+                {item.subtitle}
+              </p>
+
+              <!-- Target Audience Tags -->
+              <div class="mb-5">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Ideal For</div>
+                <div class="flex flex-wrap gap-1.5">
+                  {item.target.map((t) => (
+                    <span class="px-2.5 py-1 rounded-md bg-slate-50 text-slate-700 text-xs font-medium border border-slate-200">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Summary & Details -->
+              <p class="text-sm text-slate-700 leading-relaxed font-normal mb-3">
+                {item.summary}
+              </p>
+              <p class="text-xs text-slate-500 leading-relaxed mb-6">
+                {item.details}
+              </p>
+
+              <!-- Key Considerations Bullet List -->
+              <div class="pt-4 border-t border-slate-100">
+                <div class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2">Key Assessment Parameters</div>
+                <ul class="space-y-2 mb-6">
+                  {item.considerations.map((c) => (
+                    <li class="flex items-start text-xs text-slate-600 leading-normal">
+                      <svg class="w-4 h-4 text-energy-green mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>{c}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card CTA -->
+          <div class="p-7 pt-0">
+            <a
+              href={item.href}
+              class="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-sm font-bold text-navy-800 bg-slate-100 hover:bg-energy-green hover:text-white transition-all duration-200"
+            >
+              {item.ctaText}
+              <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Guidance Note -->
+    <div class="mt-12 p-6 rounded-2xl bg-navy text-white flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h4 class="text-lg font-bold font-heading text-white">Unsure which solution fits your energy requirements?</h4>
+        <p class="text-sm text-slate-300 mt-1">Our technical specialists conduct comprehensive site engineering assessments to recommend optimal sizing.</p>
+      </div>
+      <a
+        href="/#lead-form"
+        class="shrink-0 px-6 py-3 rounded-xl font-bold text-navy bg-solar-gold hover:bg-solar-hover transition-colors"
+      >
+        Request Technical Assessment
+      </a>
+    </div>
+
+  </div>
+</section>

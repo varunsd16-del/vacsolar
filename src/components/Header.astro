@@ -1,0 +1,132 @@
+---
+const navLinks = [
+  { name: 'Solutions', href: '/solar-solutions', hasDropdown: true },
+  { name: 'How Solar Works', href: '/#how-solar-works' },
+  { name: 'Solar Guide', href: '/solar-guide' },
+  { name: 'Site Survey', href: '/solar-site-survey' },
+  { name: 'FAQ', href: '/faq' },
+  { name: 'Contact', href: '/#lead-form' },
+];
+---
+
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-surface-border transition-all duration-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Logo matching reference design -->
+      <a href="/" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-energy-green rounded-lg p-1">
+        <div class="relative w-10 h-10 rounded-full bg-gradient-to-tr from-energy-green via-solar-gold to-solar-500 flex items-center justify-center shadow-sm">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-heading font-extrabold text-xl tracking-tight text-navy-800 leading-none">
+            VAC <span class="text-navy-700">SOLAR</span>
+          </span>
+          <span class="text-[10px] font-semibold tracking-wider text-surface-textSecondary uppercase mt-0.5">
+            Clean Energy. Brighter Tomorrow.
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-1 lg:space-x-3" aria-label="Main Navigation">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="px-3 py-2 text-sm font-semibold text-navy-700 hover:text-energy-green rounded-lg transition-colors flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-energy-green"
+          >
+            {link.name}
+            {link.hasDropdown && (
+              <svg class="w-3.5 h-3.5 text-surface-textSecondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+              </svg>
+            )}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Desktop CTA button - Navy Pill matching screenshot -->
+      <div class="hidden md:flex items-center">
+        <a
+          href="/#lead-form"
+          class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white bg-navy hover:bg-navy-dark rounded-full shadow-sm hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2"
+        >
+          Get Free Consultation
+          <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="md:hidden flex items-center">
+        <button
+          type="button"
+          id="mobile-menu-btn"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="p-2.5 rounded-lg text-navy-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-energy-green"
+        >
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menu-icon-close" class="hidden w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-menu" class="hidden md:hidden border-b border-surface-border bg-white px-4 pt-2 pb-6 space-y-3">
+    <div class="space-y-1 py-2">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="block px-4 py-2.5 text-base font-semibold text-navy-800 hover:bg-energy-light hover:text-energy-green rounded-lg transition-colors"
+        >
+          {link.name}
+        </a>
+      ))}
+    </div>
+    <div class="pt-2 border-t border-surface-border">
+      <a
+        href="/#lead-form"
+        class="flex items-center justify-center w-full px-5 py-3 text-base font-bold text-white bg-navy hover:bg-navy-dark rounded-full shadow-sm transition-colors text-center"
+      >
+        Get Free Consultation →
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  if (menuBtn && mobileMenu && iconOpen && iconClose) {
+    menuBtn.addEventListener('click', () => {
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', (!isExpanded).toString());
+      mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>

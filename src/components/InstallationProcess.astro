@@ -1,0 +1,55 @@
+---
+const steps = [
+  { step: '01', title: 'Consultation', text: 'Initial conversation to capture electricity usage goals, property location, and preliminary power expectations.' },
+  { step: '02', title: 'Requirement Qualification', text: 'Analyzing historical electricity bills, connected load phase, and preliminary roof suitability.' },
+  { step: '03', title: 'Site Survey', text: 'Physical site measurement of roof geometry, sun path shading, structural load capacity, and electrical DB panel layout.' },
+  { step: '04', title: 'System Design', text: 'Engineering a tailored 3D module layout, single-line electrical diagram (SLD), and protective switchgear specs.' },
+  { step: '05', title: 'Proposal', text: 'Presenting transparent technical proposals detailing module technology, inverter selection, structural drawings, and indicative generation estimates.' },
+  { step: '06', title: 'Customer Approval', text: 'Reviewing proposal details, finalizing procurement choices, and completing project agreement documentation.' },
+  { step: '07', title: 'Installation', text: 'Safe mounting of hot-dip galvanized structures, solar modules, UV-rated DC cabling, inverters, and dual earthing systems.' },
+  { step: '08', title: 'Commissioning', text: 'Conducting insulation resistance, string open-circuit voltage tests, inverter grid sync, and DISCOM net-metering integration.' },
+  { step: '09', title: 'Monitoring & Support', text: 'Activating real-time remote mobile telemetry monitoring and initiating scheduled system maintenance support.' }
+];
+---
+
+<section id="installation-process" class="py-20 bg-slate-50 border-b border-slate-200/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-solar-100 border border-solar-200 text-solar-900 text-xs font-bold uppercase tracking-wider mb-4">
+        Turnkey Implementation
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 tracking-tight">
+        9-Step Solar Project Execution Process
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 mt-4 leading-relaxed">
+        From initial inquiry through engineering, installation, and grid synchronization, VAC Solar follows a disciplined engineering workflow.
+      </p>
+    </div>
+
+    <!-- 9 Steps Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {steps.map((item) => (
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-card-soft hover:shadow-card-hover transition-all duration-200 relative overflow-hidden group">
+          <!-- Top Accent Line -->
+          <div class="absolute top-0 left-0 right-0 h-1 bg-slate-200 group-hover:bg-solar-400 transition-colors"></div>
+
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-mono text-xs font-bold text-solar-700 bg-solar-50 px-2.5 py-1 rounded border border-solar-200">
+              STEP {item.step}
+            </span>
+          </div>
+
+          <h3 class="text-xl font-bold font-heading text-slate-900 mb-2 group-hover:text-solar-700 transition-colors">
+            {item.title}
+          </h3>
+
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            {item.text}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

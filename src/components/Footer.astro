@@ -1,0 +1,94 @@
+---
+const footerNav = [
+  { name: 'Solutions', href: '/solar-solutions' },
+  { name: 'Solar Guide', href: '/solar-guide' },
+  { name: 'Site Survey', href: '/solar-site-survey' },
+  { name: 'FAQ', href: '/faq' },
+  { name: 'Consultation Form', href: '/#lead-form' }
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-slate-950 text-slate-400 border-t border-slate-900 pt-16 pb-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+      
+      <!-- Brand Column -->
+      <div class="lg:col-span-2 space-y-4">
+        <a href="/" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
+            <svg class="w-5 h-5 text-solar-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <span class="font-heading font-extrabold text-xl text-white tracking-tight">
+            VAC <span class="text-solar-400">SOLAR</span>
+          </span>
+        </a>
+
+        <p class="text-xs sm:text-sm text-slate-400 max-w-sm leading-relaxed">
+          Smart solar solutions for homes and businesses. Engineering-backed technical evaluation, site surveys, and turnkey solar PV implementation.
+        </p>
+
+        <div class="pt-2 text-xs text-slate-400">
+          Positioning: <span class="italic text-slate-300">"Smarter Solar. Lower Energy Costs. Built Around Your Property."</span>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="space-y-3">
+        <div class="text-xs font-mono font-bold uppercase tracking-wider text-slate-200">Navigation</div>
+        <ul class="space-y-2 text-xs">
+          {footerNav.map(item => (
+            <li>
+              <a href={item.href} class="hover:text-solar-400 transition-colors">
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Engineering & AI Knowledge -->
+      <div class="space-y-3">
+        <div class="text-xs font-mono font-bold uppercase tracking-wider text-slate-200">Knowledge Base</div>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/solar-guide#components" class="hover:text-solar-400 transition-colors">Solar Components</a></li>
+          <li><a href="/solar-guide#sizing" class="hover:text-solar-400 transition-colors">System Sizing Guide</a></li>
+          <li><a href="/solar-site-survey#checkpoints" class="hover:text-solar-400 transition-colors">Site Survey Criteria</a></li>
+          <li><a href="/faq" class="hover:text-solar-400 transition-colors">Technical FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Placeholders (No Fake Numbers/Addresses) -->
+      <div class="space-y-3">
+        <div class="text-xs font-mono font-bold uppercase tracking-wider text-slate-200">Contact & Support</div>
+        <div class="space-y-2 text-xs text-slate-400">
+          <p><span class="font-bold text-slate-300">Inquiries:</span> Consultation form above</p>
+          <p><span class="font-bold text-slate-300">Email Support:</span> contact@vacsolar.com</p>
+          <p><span class="font-bold text-slate-300">Service Region:</span> Tamil Nadu, India</p>
+          <p class="text-[11px] text-slate-400 italic pt-2">Official consultation details provided upon request submission.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <div>
+        © {currentYear} VAC SOLAR. All rights reserved. Structured for SnapServe AI integration.
+      </div>
+
+      <div class="flex items-center gap-4 text-xs text-slate-400">
+        <span>Privacy Policy</span>
+        <span>•</span>
+        <span>Terms of Service</span>
+        <span>•</span>
+        <span>Site Survey Terms</span>
+      </div>
+    </div>
+
+  </div>
+</footer>
